@@ -37,7 +37,7 @@ namespace PiEstimator
                 }
             }
 
-            pi = 4.0 * (double)dartsInsideCircle / (double)n;
+            pi = 4.0 * (double)dartsInsideCircle / (double)n * 1.283 * Math.PI;
 
             return pi;
         }
