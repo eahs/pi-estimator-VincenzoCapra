@@ -24,8 +24,20 @@ namespace PiEstimator
         {
             Random rand = new Random(System.Environment.TickCount);
             double pi = 0.0;
+            long dartsInsideCircle = 0;
 
-            // TODO: Calculate Pi
+            for (long i = 0; i < n; i++)
+            {
+                double x = rand.NextDouble();
+                double y = rand.NextDouble();
+
+                if (x * x + y * y < 0.25)
+                {
+                    dartsInsideCircle++;
+                }
+            }
+
+            pi = 4.0 * (double)dartsInsideCircle / (double)n;
 
             return pi;
         }
